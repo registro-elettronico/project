@@ -19,7 +19,7 @@
 
 import java.util.Scanner;
 
-import org.mindrot.jbcrypt.BCrypt;
+//import org.mindrot.jbcrypt.BCrypt; FAILED IMPORT
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
@@ -55,7 +55,8 @@ public class Main {
         System.out.println("Password: ");
         String enUserPW = scanner.nextLine().trim();
 
-        if(contLogin < 5){
+//HASHED VERSION (WORKING) - failed library import
+/*      if(contLogin < 5){
             System.out.println("Hashed Password: " + enHashPW); //temporary
             if(enHashUserID.equals(UserID) && enHashUserPW.equals(UserPW)){
                 login = true; //Login effettuato con successo
@@ -63,6 +64,44 @@ public class Main {
                     //mandare ad interfaccia per DOCENTI e ADMIN
                 }else{
                     //mandare ad interfaccia per normali visualizzatori
+                }
+            }else{
+                System.out.println("\nIncorrect name or password!");
+                login = false;
+            }
+            //removeLine(6); TENTATIVO DI RIMUOVERE LINEE NEL TERMINALE
+            printUnderscores(pageWidth);
+            contLogin = contLogin + 1;
+        } */
+
+        if(contLogin < 5){
+            if(enUserID.equals(UserID) && enUserPW.equals(UserPW)){
+                login = true; //Login effettuato con successo
+                if(hasUserPrivileges(enUserPW) == true){
+                    //mandare ad interfaccia per DOCENTI e ADMIN
+                }else{
+                    Home home = new Home();
+
+                    System.out.println("Cosa desideri visualizzare?");
+                    System.out.println("1. Voti degli studenti");
+                    System.out.println("2. Assenze");
+                    System.out.println("3. Note ricevute");
+                    System.out.print("Inserisci il numero corrispondente: ");
+                    int choice = scanner.nextInt();
+
+                    switch (choice) {
+                        case 1:
+                            home.displayGrades(); // Visualizza i voti degli studenti
+                            break;
+                        case 2:
+                            home.displayAbsences(); // Visualizza le assenze
+                            break;
+                        case 3:
+                            home.displayNotes(); // Visualizza le note ricevute
+                            break;
+                        default:
+                            System.out.println("Scelta non valida");
+                    }                    
                 }
             }else{
                 System.out.println("\nIncorrect name or password!");
@@ -100,9 +139,9 @@ public class Main {
         System.out.println();
     }
     //funzione per riconoscimento tipologia account
-    public static boolean hasUserPrivileges(String UserID) {
-        if (UserID != null && !UserID.isEmpty()) {
-            char firstChar = UserID.charAt(0);
+    public static boolean hasUserPrivileges(String enUserID) {
+        if (enUserID != null && !enUserID.isEmpty()) {
+            char firstChar = enUserID.charAt(0);
             
             if (firstChar == 'A' || firstChar == 'D') {
                 return true;
@@ -111,10 +150,10 @@ public class Main {
         return false;
     }
     //password hashing
-    public static void hashPassword(String enUserPW, String UserPW){
+/*  public static void hashPassword(String enUserPW, String UserPW){
         String salt = BCrypt.gensalt();
         String enHashPW = Bcrypt.hashpw(enUserPW, salt);
-    }
+    } */
     
 
     //funzione per rimuovere linee ormai inutilizzate nel programma
