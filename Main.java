@@ -19,6 +19,8 @@
 
 import java.util.Scanner;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
@@ -54,8 +56,14 @@ public class Main {
         String enUserPW = scanner.nextLine().trim();
 
         if(contLogin < 5){
-            if(enUserID == UserID && enUserPW == UserPW){
-                login = true;
+            System.out.println("Hashed Password: " + enHashPW); //temporary
+            if(enHashUserID.equals(UserID) && enHashUserPW.equals(UserPW)){
+                login = true; //Login effettuato con successo
+                if(hasUserPrivileges() == true){
+                    //mandare ad interfaccia per DOCENTI e ADMIN
+                }else{
+                    //mandare ad interfaccia per normali visualizzatori
+                }
             }else{
                 System.out.println("\nIncorrect name or password!");
                 login = false;
@@ -91,6 +99,24 @@ public class Main {
         }
         System.out.println();
     }
+    //funzione per riconoscimento tipologia account
+    public static boolean hasUserPrivileges(String UserID) {
+        if (UserID != null && !UserID.isEmpty()) {
+            char firstChar = UserID.charAt(0);
+            
+            if (firstChar == 'A' || firstChar == 'D') {
+                return true;
+            }
+        }
+        return false;
+    }
+    //password hashing
+    public static void hashPassword(String enUserPW, String UserPW){
+        String salt = BCrypt.gensalt();
+        String enHashPW = Bcrypt.hashpw(enUserPW, salt);
+    }
+    
+
     //funzione per rimuovere linee ormai inutilizzate nel programma
     /*
     public static void removeLine(int lineToRemove) {
