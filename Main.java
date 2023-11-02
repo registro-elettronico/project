@@ -24,7 +24,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
+        //belle le istanze
         Scanner scanner = new Scanner(System.in);
+        User docente1 = new User("DMRNMRCIF", "Marco", "Marinello", true);
+        User docente2 = new User("DTFNGDUTD", "Guido", "Tufano", true);
+        User docente3 = new User("DCSTNDRTC", "Andrea", "Cestari", true);
+        User studente1 = new User("SDCRAXL07", "Alex", "De Carli", false);
+        User studente2 = new User("SCHCTMS06", "Thomas", "Chiocchetti", false);
+        User studente3 = new User("SFRRCCC06", "Ciccio", "Ferrara", false);
+        User genitore1 = new User("GDCRAXL07", "Genitore", "De Carli", false);
+        User genitore2 = new User("GCHCTMS06", "Genitore", "Chiocchetti", false);
+        User genitore3 = new User("GFRRCCC06", "Genitore", "Ferrara", false);
+        //adesso non più
+
         boolean login = false;
         int contLogin = 0;
         int pageWidth = 63;
@@ -78,9 +90,26 @@ public class Main {
             if(enUserID.equals(UserID) && enUserPW.equals(UserPW)){
                 login = true; //Login effettuato con successo
                 if(hasUserPrivileges(enUserPW) == true){
-                    //mandare ad interfaccia per DOCENTI e ADMIN
+
+                    System.out.println("Selezionare la classe:");
+                    System.out.println("1. 4E - Informatica");
+                    System.out.println("2. 2L - Scientifico");
+                    System.out.println("3. 5F - Telecomunicazioni");
+                    System.out.print("Inserisci il numero corrispondente: ");
+                    int choice = scanner.nextInt();
+
+                    switch (choice) {
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                        default:
+                            System.out.println("Scelta non valida");
+                    }
+
                 }else{
-                    Home home = new Home();
 
                     System.out.println("Cosa desideri visualizzare?");
                     System.out.println("1. Voti degli studenti");
@@ -91,13 +120,15 @@ public class Main {
 
                     switch (choice) {
                         case 1:
-                            home.displayGrades(); // Visualizza i voti degli studenti
+                            user.displayVotiIF();
+                            user.displayVotiTD();
+                            user.displayVotiTC();
                             break;
                         case 2:
-                            home.displayAbsences(); // Visualizza le assenze
+                            user.displayNote();
                             break;
                         case 3:
-                            home.displayNotes(); // Visualizza le note ricevute
+                            user.displayAssenze();
                             break;
                         default:
                             System.out.println("Scelta non valida");
@@ -107,13 +138,12 @@ public class Main {
                 System.out.println("\nIncorrect name or password!");
                 login = false;
             }
-            //removeLine(6); TENTATIVO DI RIMUOVERE LINEE NEL TERMINALE
             printUnderscores(pageWidth);
             contLogin = contLogin + 1;
         }else{
-            printUnderscores(pageWidth); //print lines to page end
+            printUnderscores(pageWidth); //stampa "linea"
             System.out.println("Too many failed attemps,\ncheck your credential before loggin in!\n");
-            int countdownFrom = 5; // Change this to your desired starting number
+            int countdownFrom = 5; // countdown blocco login
 
         for (int i = countdownFrom; i >= 1; i--) {
             System.out.println("\rWait before trying again: " + i);
@@ -173,68 +203,3 @@ public class Main {
     }
     */
 }
-
-
-//DATABASE IMPLEMENTATION (DO NOT USE OR DELETE)
-/*import java.util.Scanner;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-public class Main {
-    public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Username: ");
-        String enteredName = scanner.nextLine();
-        System.out.println("Password: ");
-        String enteredPassword = scanner.nextLine();
-
-        try {
-            // Load the SQLite driver
-            Class.forName("org.sqlite.JDBC");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            return;
-        }
-
-        Connection connection = null;
-        try {
-            String dbPath = "jdbc:sqlite:./database/database.sql";
-            connection = DriverManager.getConnection(dbPath);
-
-            
-            // Now, let's check the credentials
-            String query = "SELECT * FROM login WHERE name = ? AND password = ?";
-
-            try (PreparedStatement statement = connection.prepareStatement(query)) {
-                statement.setString(1, enteredName);
-                statement.setString(2, enteredPassword);
-
-                try (ResultSet result = statement.executeQuery()) {
-                    if (result.next()) {
-                        System.out.println("Login successful");
-                        // Add code here to proceed to the home screen
-                    } else {
-                        System.out.println("Login failed");
-                        // Add code here to handle a failed login
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-}
-*/
