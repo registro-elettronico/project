@@ -6,14 +6,15 @@ public class User {
     String nome;
     String cognome;
     boolean hasUserPrivileges;
+    String password;
     String materia;
     String classe;
     String classe1;
     String classe2;
     String classe3;
-    int[] votiIF = new int[5];
-    int[] votiTD = new int[5];
-    int[] votiTC = new int[5];
+    double[] votiIF = new double[5];
+    double[] votiTD = new double[5];
+    double[] votiTC = new double[5];
     String[] note = new String[3];
     String[] assenze = new String[10];
 
@@ -23,6 +24,7 @@ public class User {
         this.nome = nome;
         this.cognome = cognome;
         this.hasUserPrivileges = hasUserPrivileges;
+        this.password = password;
 
         if(!hasUserPrivileges){
             this.classe = classe;
@@ -53,7 +55,7 @@ public class User {
         System.out.println("Benvenuto " + this.nome + this.cognome);
     }
 
-    void displayVotiIF() {
+    static void displayVotiIF() {
         System.out.println("Questi sono i voti di informatica di " + this.nome + this.cognome);
 
         for (int i = 0; i < 5; i++) {

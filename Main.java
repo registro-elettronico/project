@@ -17,6 +17,8 @@
  */
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 //import org.mindrot.jbcrypt.BCrypt; FAILED IMPORT
@@ -25,16 +27,133 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
 
         //belle le istanze
+        User[] studenti = new User[3];
+        User[] docenti = new User[3];
+        User[] genitori = new User[3];
+        List<User> studentiList = new ArrayList<>();
+        List<User> docentiList = new ArrayList<>();
+        List<User> genitoriList = new ArrayList<>();
+
         Scanner scanner = new Scanner(System.in);
-        User docente1 = new User("DMRNMRCIF", "Marco", "Marinello", true);
-        User docente2 = new User("DTFNGDUTD", "Guido", "Tufano", true);
-        User docente3 = new User("DCSTNDRTC", "Andrea", "Cestari", true);
-        User studente1 = new User("SDCRAXL07", "Alex", "De Carli", false);
-        User studente2 = new User("SCHCTMS06", "Thomas", "Chiocchetti", false);
-        User studente3 = new User("SFRRCCC06", "Ciccio", "Ferrara", false);
-        User genitore1 = new User("GDCRAXL07", "Genitore", "De Carli", false);
-        User genitore2 = new User("GCHCTMS06", "Genitore", "Chiocchetti", false);
-        User genitore3 = new User("GFRRCCC06", "Genitore", "Ferrara", false);
+        docentiList.add(new User("DMRNMRCIF", "Marco", "Marinello", true));
+        docentiList.get(0).materia = "Informatica";
+        docentiList.get(0).classe1 = "4E";
+        docentiList.get(0).classe2 = "2L";
+        docentiList.get(0).classe3 = "5F";
+
+        docentiList.add(new User("DTFNGDUTD", "Guido", "Tufano", true));
+        docentiList.get(1).materia = "Informatica";
+        docentiList.get(1).classe1 = "4E";
+        docentiList.get(1).classe2 = "2L";
+        docentiList.get(1).classe3 = "5F";
+
+        docentiList.add(new User("DCSTNDRTC", "Andrea", "Cestari", true));
+        docentiList.get(2).materia = "Informatica";
+        docentiList.get(2).classe1 = "4E";
+        docentiList.get(2).classe2 = "2L";
+        docentiList.get(2).classe3 = "5F";
+
+        studentiList.add(new User("SDCRAXL07", "Alex", "De Carli", false));
+        studentiList.get(0).classe = "4E";
+        for (int i = 0; i < 5; i++) {
+            if (i == 0) {
+                studentiList.get(0).votiIF[i] = 5.25;
+                studentiList.get(0).votiTD[i] = 9.5;
+                studentiList.get(0).votiTC[i] = 5.25;
+            } else if (i == 1) {
+                studentiList.get(0).votiIF[i] = 10.0;
+                studentiList.get(0).votiTD[i] = 9.0;
+                studentiList.get(0).votiTC[i] = 7.0;
+            } else if (i == 2) {
+                studentiList.get(0).votiIF[i] = 10.0;
+                studentiList.get(0).votiTD[i] = 8.75;
+                studentiList.get(0).votiTC[i] = 6.5;
+            } else if (i == 3) {
+                studentiList.get(0).votiIF[i] = 7.0;
+                studentiList.get(0).votiTD[i] = 8.0;
+                studentiList.get(0).votiTC[i] = 7.5;
+            } else if (i == 4) {
+                studentiList.get(0).votiIF[i] = 3.75;
+                studentiList.get(0).votiTD[i] = 7.5;
+                studentiList.get(0).votiTC[i] = 7.5;
+            }
+        }
+
+        studentiList.add(new User("SCHCTMS06", "Thomas", "Chiocchetti", false));
+        studentiList.get(1).classe = "2L";
+        for (int i = 0; i < 5; i++) {
+            if (i == 0) {
+                studentiList.get(1).votiIF[i] = 5.25;
+                studentiList.get(1).votiTD[i] = 9.5;
+                studentiList.get(1).votiTC[i] = 5.25;
+            } else if (i == 1) {
+                studentiList.get(1).votiIF[i] = 10.0;
+                studentiList.get(1).votiTD[i] = 9.0;
+                studentiList.get(1).votiTC[i] = 7.0;
+            } else if (i == 2) {
+                studentiList.get(1).votiIF[i] = 10.0;
+                studentiList.get(1).votiTD[i] = 8.75;
+                studentiList.get(1).votiTC[i] = 6.5;
+            } else if (i == 3) {
+                studentiList.get(1).votiIF[i] = 7.25;
+                studentiList.get(1).votiTD[i] = 8.0;
+                studentiList.get(1).votiTC[i] = 7.5;
+            } else if (i == 4) {
+                studentiList.get(1).votiIF[i] = 3.75;
+                studentiList.get(1).votiTD[i] = 7.5;
+                studentiList.get(1).votiTC[i] = 7.5;
+            }
+        }
+
+        studentiList.add(new User("SFRRCCC06", "Ciccio", "Ferrara", false));
+        studentiList.get(2).classe = "5F";
+        for (int i = 0; i < 5; i++) {
+            if (i == 0) {
+                studentiList.get(2).votiIF[i] = 5.25;
+                studentiList.get(2).votiTD[i] = 9.5;
+                studentiList.get(2).votiTC[i] = 5.25;
+            } else if (i == 1) {
+                studentiList.get(2).votiIF[i] = 10.0;
+                studentiList.get(2).votiTD[i] = 9.0;
+                studentiList.get(2).votiTC[i] = 7.0;
+            } else if (i == 2) {
+                studentiList.get(2).votiIF[i] = 10.0;
+                studentiList.get(2).votiTD[i] = 8.75;
+                studentiList.get(2).votiTC[i] = 6.5;
+            } else if (i == 3) {
+                studentiList.get(2).votiIF[i] = 7.0;
+                studentiList.get(2).votiTD[i] = 8.0;
+                studentiList.get(2).votiTD[i] = 8.0;
+            } else if (i == 4) {
+                studentiList.get(2).votiIF[i] = 3.75;
+                studentiList.get(2).votiTD[i] = 7.5;
+                studentiList.get(2).votiTC[i] = 7.5;
+            }
+        }
+
+        genitoriList.add(new User("GDCRAXL07", "Genitore", "De Carli", false));
+        genitoriList.get(0).classe = studentiList.get(0).classe;
+        for (int i = 0; i < 5; i++) {
+            genitoriList.get(0).votiIF[i] = studentiList.get(0).votiIF[i];
+            genitoriList.get(0).votiTD[i] = studentiList.get(0).votiTD[i];
+            genitoriList.get(0).votiTC[i] = studentiList.get(0).votiTC[i];
+        }
+
+        genitoriList.add(new User("GCHCTMS06", "Genitore", "Chiocchetti", false));
+        genitoriList.get(1).classe = studentiList.get(1).classe;
+        for (int i = 0; i < 5; i++) {
+            genitoriList.get(1).votiIF[i] = studentiList.get(1).votiIF[i];
+            genitoriList.get(1).votiTD[i] = studentiList.get(1).votiTD[i];
+            genitoriList.get(1).votiTC[i] = studentiList.get(1).votiTC[i];
+        }
+
+        genitoriList.add(new User("GFRRCCC06", "Genitore", "Ferrara", false));
+        genitoriList.get(2).classe = studentiList.get(2).classe;
+        for (int i = 0; i < 5; i++) {
+            genitoriList.get(2).votiIF[i] = studentiList.get(2).votiIF[i];
+            genitoriList.get(2).votiTD[i] = studentiList.get(2).votiTD[i];
+            genitoriList.get(2).votiTC[i] = studentiList.get(2).votiTC[i];
+        }
         //adesso non più
 
         boolean login = false;
@@ -120,15 +239,17 @@ public class Main {
 
                     switch (choice) {
                         case 1:
-                            user.displayVotiIF();
-                            user.displayVotiTD();
-                            user.displayVotiTC();
+                            for (User student : studentiList) {
+                                student.displayVotiIF();
+                                student.displayVotiTD();
+                                student.displayVotiTC();
+                            }
                             break;
                         case 2:
-                            user.displayNote();
+                            studentiList.displayNote();
                             break;
                         case 3:
-                            user.displayAssenze();
+                            studentiList.displayAssenze();
                             break;
                         default:
                             System.out.println("Scelta non valida");
