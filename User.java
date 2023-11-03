@@ -55,7 +55,7 @@ public class User {
         System.out.println("Benvenuto " + this.nome + this.cognome);
     }
 
-    static void displayVotiIF() {
+    void displayVotiIF() {
         System.out.println("Questi sono i voti di informatica di " + this.nome + this.cognome);
 
         for (int i = 0; i < 5; i++) {
@@ -79,13 +79,13 @@ public class User {
         }
     }
 
-    void diaplayNote(){
+    public void diaplayNote(){
         for (int i = 0; i < 5; i++) {
             System.out.println(note[i]);
         }
     }
 
-    void diaplayAssenze(){
+    public void diaplayAssenze(){
         for (int i = 0; i < 5; i++) {
             System.out.println(assenze[i]);
         }

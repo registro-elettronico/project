@@ -246,14 +246,19 @@ public class Main {
                             }
                             break;
                         case 2:
-                            studentiList.displayNote();
+                            for (User student : studentiList) {
+                                //student.displayNote();
+                            }
                             break;
                         case 3:
-                            studentiList.displayAssenze();
+                            for (User student : studentiList) {
+                                //student.displayAssenze();
+                            }
                             break;
                         default:
                             System.out.println("Scelta non valida");
-                    }                    
+                    }
+                                 
                 }
             }else{
                 System.out.println("\nIncorrect name or password!");
