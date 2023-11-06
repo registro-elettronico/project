@@ -1,7 +1,7 @@
 /*
- * TO DO LIST
- * -
- * -
+ * TO DO LIST 
+ * - Login
+ * - 
  * -
  * -
  * -
@@ -14,8 +14,8 @@
  * 
  * APPUNTI:
  * directory Alex: cd /d D:\Documents\GitHub\project
+ * Clone: git clone https://github.com/registro-elettronico/project.git
  */
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,26 +35,31 @@ public class Main {
         List<User> genitoriList = new ArrayList<>();
 
         Scanner scanner = new Scanner(System.in);
-        docentiList.add(new User("DMRNMRCIF", "Marco", "Marinello", true));
+        docentiList.add(new User("DMRNMRCIF", "Marco", "Marinello", true, "pass"));
         docentiList.get(0).materia = "Informatica";
         docentiList.get(0).classe1 = "4E";
         docentiList.get(0).classe2 = "2L";
         docentiList.get(0).classe3 = "5F";
 
-        docentiList.add(new User("DTFNGDUTD", "Guido", "Tufano", true));
-        docentiList.get(1).materia = "Informatica";
+        docentiList.add(new User("DTFNGDUTD", "Guido", "Tufano", true, "pass"));
+        docentiList.get(1).materia = "Tedesco";
         docentiList.get(1).classe1 = "4E";
         docentiList.get(1).classe2 = "2L";
         docentiList.get(1).classe3 = "5F";
 
-        docentiList.add(new User("DCSTNDRTC", "Andrea", "Cestari", true));
-        docentiList.get(2).materia = "Informatica";
+        docentiList.add(new User("DCSTNDRTC", "Andrea", "Cestari", true, "pass"));
+        docentiList.get(2).materia = "Telecomunicazioni";
         docentiList.get(2).classe1 = "4E";
         docentiList.get(2).classe2 = "2L";
         docentiList.get(2).classe3 = "5F";
 
-        studentiList.add(new User("SDCRAXL07", "Alex", "De Carli", false));
+        studentiList.add(new User("SDMTJNN06", "Johannes", "Demetz", false, "pass"));
         studentiList.get(0).classe = "4E";
+        Assenze assenzeS0 = studentiList.get(0).getAssenze(null);
+        assenzeS0.setAssenza1("ieri");
+        assenzeS0.setAssenza2("oggi");
+        assenzeS0.setAssenza3("domani");
+
         for (int i = 0; i < 5; i++) {
             if (i == 0) {
                 studentiList.get(0).votiIF[i] = 5.25;
@@ -79,7 +84,7 @@ public class Main {
             }
         }
 
-        studentiList.add(new User("SCHCTMS06", "Thomas", "Chiocchetti", false));
+        studentiList.add(new User("SKMPRNA08", "Arno", "Kompatscher", false, "pass"));
         studentiList.get(1).classe = "2L";
         for (int i = 0; i < 5; i++) {
             if (i == 0) {
@@ -104,8 +109,9 @@ public class Main {
                 studentiList.get(1).votiTC[i] = 7.5;
             }
         }
+        
 
-        studentiList.add(new User("SFRRCCC06", "Ciccio", "Ferrara", false));
+        studentiList.add(new User("SFRRCCC05", "Ciccio", "Ferrara", false, "pass"));
         studentiList.get(2).classe = "5F";
         for (int i = 0; i < 5; i++) {
             if (i == 0) {
@@ -131,7 +137,7 @@ public class Main {
             }
         }
 
-        genitoriList.add(new User("GDCRAXL07", "Genitore", "De Carli", false));
+        genitoriList.add(new User("GDCRAXL07", "Genitore", "Demetz", false, "pass"));
         genitoriList.get(0).classe = studentiList.get(0).classe;
         for (int i = 0; i < 5; i++) {
             genitoriList.get(0).votiIF[i] = studentiList.get(0).votiIF[i];
@@ -139,7 +145,7 @@ public class Main {
             genitoriList.get(0).votiTC[i] = studentiList.get(0).votiTC[i];
         }
 
-        genitoriList.add(new User("GCHCTMS06", "Genitore", "Chiocchetti", false));
+        genitoriList.add(new User("GCHCTMS06", "Genitore", "Kompatscher", false, "pass"));
         genitoriList.get(1).classe = studentiList.get(1).classe;
         for (int i = 0; i < 5; i++) {
             genitoriList.get(1).votiIF[i] = studentiList.get(1).votiIF[i];
@@ -147,25 +153,20 @@ public class Main {
             genitoriList.get(1).votiTC[i] = studentiList.get(1).votiTC[i];
         }
 
-        genitoriList.add(new User("GFRRCCC06", "Genitore", "Ferrara", false));
+        genitoriList.add(new User("GFRRCCC06", "Genitore", "Ferrara", false, "pass"));
         genitoriList.get(2).classe = studentiList.get(2).classe;
         for (int i = 0; i < 5; i++) {
             genitoriList.get(2).votiIF[i] = studentiList.get(2).votiIF[i];
             genitoriList.get(2).votiTD[i] = studentiList.get(2).votiTD[i];
             genitoriList.get(2).votiTC[i] = studentiList.get(2).votiTC[i];
         }
-        //adesso non più
+        //non più forse, meglio SQL
 
         boolean login = false;
         int contLogin = 0;
         int pageWidth = 63;
 
-        //temp
-        String UserID = "name";
-        String UserPW = "pass";
-        //fine temp
-
-        //benvenuto nel programma
+        //Benvenuto (Inizio)
         String logo = 
             " _____   ______  _____  _____   _____  _______  _____    ____  \n" +
             "|  __ \\ |  ____|/ ____||_   _| / ____||__   __||  __ \\  / __ \\ \n" +
@@ -176,125 +177,145 @@ public class Main {
 
         System.out.println(logo);
         printUnderscores(pageWidth);
-        //fine
+        //Attende 3 secondi
+        try {
+            Thread.sleep(3000); 
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        //Benvenuto (Fine)
 
 
         do{
-        System.out.println("LOGIN\n");
-        System.out.println("Username: ");
-        String enUserID = scanner.nextLine().trim(); //trim() serve a rimuovere spazi bianchi messi per errore prima del testo
-        System.out.println("Password: ");
-        String enUserPW = scanner.nextLine().trim();
 
-//HASHED VERSION (WORKING) - failed library import
-/*      if(contLogin < 5){
-            System.out.println("Hashed Password: " + enHashPW); //temporary
-            if(enHashUserID.equals(UserID) && enHashUserPW.equals(UserPW)){
-                login = true; //Login effettuato con successo
-                if(hasUserPrivileges() == true){
-                    //mandare ad interfaccia per DOCENTI e ADMIN
-                }else{
-                    //mandare ad interfaccia per normali visualizzatori
-                }
-            }else{
-                System.out.println("\nIncorrect name or password!");
-                login = false;
-            }
-            //removeLine(6); TENTATIVO DI RIMUOVERE LINEE NEL TERMINALE
-            printUnderscores(pageWidth);
-            contLogin = contLogin + 1;
-        } */
+            if(contLogin<5){
 
-        if(contLogin < 5){
-            if(enUserID.equals(UserID) && enUserPW.equals(UserPW)){
-                login = true; //Login effettuato con successo
-                if(hasUserPrivileges(enUserPW) == true){
+                User currentUser = searchUserByUsername(UserID, studentiList, docentiList, genitoriList);
 
-                    System.out.println("Selezionare la classe:");
-                    System.out.println("1. 4E - Informatica");
-                    System.out.println("2. 2L - Scientifico");
-                    System.out.println("3. 5F - Telecomunicazioni");
-                    System.out.print("Inserisci il numero corrispondente: ");
-                    int choice = scanner.nextInt();
-
-                    switch (choice) {
-                        case 1:
-                            break;
-                        case 2:
-                            break;
-                        case 3:
-                            break;
-                        default:
-                            System.out.println("Scelta non valida");
+                if (currentUser != null && currentUser.getPassword().equals(UserPW)) {
+                System.out.println("Login successful!");
+                login = true;
+                    if (currentUser.isDocente()) {
+                        displayDocente();
+                    } else if (currentUser.isGenitore()) {
+                        displayUser();
+                    } else {
+                        displayUser();
                     }
-
-                }else{
-
-                    System.out.println("Cosa desideri visualizzare?");
-                    System.out.println("1. Voti degli studenti");
-                    System.out.println("2. Assenze");
-                    System.out.println("3. Note ricevute");
-                    System.out.print("Inserisci il numero corrispondente: ");
-                    int choice = scanner.nextInt();
-
-                    switch (choice) {
-                        case 1:
-                            for (User student : studentiList) {
-                                student.displayVotiIF();
-                                student.displayVotiTD();
-                                student.displayVotiTC();
-                            }
-                            break;
-                        case 2:
-                            for (User student : studentiList) {
-                                //student.displayNote();
-                            }
-                            break;
-                        case 3:
-                            for (User student : studentiList) {
-                                //student.displayAssenze();
-                            }
-                            break;
-                        default:
-                            System.out.println("Scelta non valida");
-                    }
-                                 
+                } else {
+                    System.out.println("Login failed. Please check your credentials.");
+                    login = false;
                 }
+                printUnderscores(pageWidth);
+                contLogin=contLogin+1;
             }else{
-                System.out.println("\nIncorrect name or password!");
-                login = false;
-            }
-            printUnderscores(pageWidth);
-            contLogin = contLogin + 1;
-        }else{
-            printUnderscores(pageWidth); //stampa "linea"
-            System.out.println("Too many failed attemps,\ncheck your credential before loggin in!\n");
-            int countdownFrom = 5; // countdown blocco login
+                printUnderscores(pageWidth); // stampa "linea"
+                System.out.println("Too many failed attemps,\ncheck your credential before loggin in!\n");
+                int countdownFrom = 5; // countdown blocco login
 
-        for (int i = countdownFrom; i >= 1; i--) {
-            System.out.println("\rWait before trying again: " + i);
-            Thread.sleep(1000);
-        }
-        printUnderscores(pageWidth);
-        }
+                for(int i = countdownFrom; i >= 1 ; i--){
+
+                    System.out.println("\rWait before trying again: " + i);
+                    Thread.sleep(1000);
+
+                }
+                printUnderscores(pageWidth);
+            }
+
         }while(!login);
-        System.out.println("Login successful!");
-        printUnderscores(pageWidth);
+
+    public static void displayDocente(){
+        System.out.println("Selezionare la classe:");
+        System.out.println("1. 4E - Informatica");
+        System.out.println("2. 2L - Scientifico");
+        System.out.println("3. 5F - Telecomunicazioni");
+        System.out.print("Inserisci il numero corrispondente: ");
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                for (User student : studentiList) {
+                    student.displayVotiTutti();
+                    student.displayVotiTutti();
+                    student.displayVotiTutti();
+                }
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+            System.out.println("Scelta non valida");
+        }
     }
-    //funzioni per stampare a schermo le linee divisorie (non toccare)
+
+    public void GherdeinaList() { // Gherdëina* (Si.)
+        for (int i = 0; i < 9; i++) {
+
+        }
+    }
+
+    public static void displayUser(){
+        System.out.println("Cosa desideri visualizzare?");
+        System.out.println("1. Voti degli studenti");
+        System.out.println("2. Assenze");
+        System.out.println("3. Note ricevute");
+        System.out.print("Inserisci il numero corrispondente: ");
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                for (User student : studentiList) {
+                    student.displayVotiIF();
+                    student.displayVotiTD();
+                    student.displayVotiTC();
+                }
+                break;
+            case 2:
+                for (User student : studentiList) {
+                    //student.displayNote();            //STAMPARE A SCHERMO LE ASSENZE DEL SINGOLO STUDENTE
+                }
+                break;
+            case 3:
+                for (User student : studentiList) {
+                    //student.displayAssenze();         //STAMPARE A SCHERMO LE ASSENZE DEL SINGOLO STUDENTE
+                }
+                break;
+            default:
+                System.out.println("Scelta non valida");
+        }
+                                 
+    }
+
+
+    //belle le liste per i login, in SQL sarebbe più semplice
+    public static User searchUserByUsername(String UserID, List<User>... userLists) {
+        for (List<User> userList : userLists) {
+            for (User user : userList) {
+                if (user.getUsername().equalsIgnoreCase(UserID)) {
+                    return user;
+                }
+            }
+        }
+        return null; // Return null if user not found
+    }
+
+    // funzioni per stampare a schermo le linee divisorie (non toccare)
     public static void printUnderscores(int width) {
         for (int i = 0; i < width; i++) {
             System.out.print("=");
         }
         System.out.println();
     }
+
     public static void printUnderscores2(int width) {
         for (int i = 0; i < width; i++) {
             System.out.print("_");
         }
         System.out.println();
     }
-    //funzione per riconoscimento tipologia account
+
+    // funzione per riconoscimento tipologia account
     public static boolean hasUserPrivileges(String enUserID) {
         if (enUserID != null && !enUserID.isEmpty()) {
             char firstChar = enUserID.charAt(0);
@@ -305,27 +326,30 @@ public class Main {
         }
         return false;
     }
-    //password hashing
-/*  public static void hashPassword(String enUserPW, String UserPW){
-        String salt = BCrypt.gensalt();
-        String enHashPW = Bcrypt.hashpw(enUserPW, salt);
-    } */
-    
 
-    //funzione per rimuovere linee ormai inutilizzate nel programma
+    // password hashing
     /*
-    public static void removeLine(int lineToRemove) {
-        // ANSI escape code to move the cursor to the beginning of the line
-        System.out.print("\u001B[" + lineToRemove + "F");
+     * public static void hashPassword(String enUserPW, String UserPW){
+     * String salt = BCrypt.gensalt();
+     * String enHashPW = Bcrypt.hashpw(enUserPW, salt);
+     * }
+     */
 
-        // ANSI escape code to clear the line
-        System.out.print("\u001B[2K");
-
-        // ANSI escape code to move the cursor to the next line
-        System.out.print("\u001B[E");
-
-        // Overwrite the next line with spaces to clear any remnants
-        System.out.println("                                        ");
+    // funzione per rimuovere linee ormai inutilizzate nel programma
+    /*
+     * public static void removeLine(int lineToRemove) {
+     * // ANSI escape code to move the cursor to the beginning of the line
+     * System.out.print("\u001B[" + lineToRemove + "F");
+     * 
+     * // ANSI escape code to clear the line
+     * System.out.print("\u001B[2K");
+     * 
+     * // ANSI escape code to move the cursor to the next line
+     * System.out.print("\u001B[E");
+     * 
+     * // Overwrite the next line with spaces to clear any remnants
+     * System.out.println("                                        ");
+     * }
+     */
     }
-    */
 }

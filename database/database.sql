@@ -10,3 +10,5 @@ CREATE TABLE Grades (
     grade INT,
     FOREIGN KEY (id) REFERENCES login(id)
 );
+
+-- ci ho provato :) ~Alex
