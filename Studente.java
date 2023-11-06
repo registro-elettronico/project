@@ -6,16 +6,31 @@ public class Studente {
     private String cognome;
     private String username;
     private String password;
+    private String classe;
     private List<Voto> voti;
     private List<Assenza> assenze;
 
-    public Studente(String nome, String cognome, String username, String password) {
+    public Studente(String nome, String cognome, String username, String password, String classe) {
         this.nome = nome;
         this.cognome = cognome;
         this.username = username;
         this.password = password;
+        this.classe = classe;
         voti = new ArrayList<>();
         assenze = new ArrayList<>();
+    }
+
+    @Override
+    public String toString() {
+        return "Studente{" +
+                "nome='" + nome + '\'' +
+                ", cognome='" + cognome + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", classe='" + classe + '\'' +
+                ", voti=" + voti +
+                ", assenze=" + assenze +
+                '}';
     }
 
     public List<Voto> getVoti() {
@@ -56,4 +71,11 @@ public class Studente {
         this.username = username;
     }
 
+    public String getClasse() {
+        return classe;
+    }
+
+    public void setClasse(String classe) {
+        this.classe = classe;
+    }
 }

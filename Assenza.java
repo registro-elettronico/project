@@ -9,6 +9,14 @@ public class Assenza {
         this.motivo = motivo;
     }
 
+    @Override
+    public String toString() {
+        return "Assenza{" +
+                "data=" + data +
+                ", motivo='" + motivo + '\'' +
+                '}';
+    }
+
     public Date getData() {
         return data;
     }

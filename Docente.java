@@ -17,6 +17,18 @@ public class Docente {
         this.classi = classi;
     }
 
+    @Override
+    public String toString() {
+        return "Docente{" +
+                "nome='" + nome + '\'' +
+                ", cognome='" + cognome + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", materie=" + materie +
+                ", classi=" + classi +
+                '}';
+    }
+
     public List<String> getClassi() {
         return classi;
     }

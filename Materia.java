@@ -5,6 +5,13 @@ public class Materia {
         this.nome = nome;
     }
 
+    @Override
+    public String toString() {
+        return "Materia{" +
+                "nome='" + nome + '\'' +
+                '}';
+    }
+
     public String getNome() {
         return nome;
     }
