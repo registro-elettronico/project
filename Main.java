@@ -97,7 +97,7 @@ public class Main {
                 "Nunziatina",
                 "Maisano",
                 "maisanonun",
-                "speranza1",
+                "maisano",
                 new ArrayList<>() {{
                     add(new Materia("Italiano"));
                     add(new Materia("Storia"));
@@ -113,7 +113,7 @@ public class Main {
                 "Marco",
                 "Marinello",
                 "marinellomar",
-                "speranza2",
+                "marinello",
                 new ArrayList<>() {{
                     add(new Materia("Informatica"));
                     add(new Materia("TPSIT"));
@@ -129,7 +129,7 @@ public class Main {
                 "Alfredo",
                 "Cantarella",
                 "cantarellaalf",
-                "speranza3",
+                "cantarella",
                 new ArrayList<>() {{
                     add(new Materia("Sistemi e Reti"));
                     add(new Materia("Scienze e Tecnologie Applicate"));
@@ -148,21 +148,21 @@ public class Main {
                 "Thomas",
                 "Chiocchetti",
                 "chiocchettitho",
-                "speranza4",
+                "chiocchetti",
                 "4E"
         ));
         studentiList.add(new Studente(
                 "Alex",
                 "De Carli",
                 "decarliale",
-                "speranza5",
+                "decarli",
                 "4E"
         ));
         studentiList.add(new Studente(
                 "Edina",
                 "Perviz",
                 "pervizedi",
-                "speranza6",
+                "perviz",
                 "4E"
         ));
     }
