@@ -78,12 +78,13 @@ public class Docente {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Inserisci voto:");
         float voto = scanner.nextFloat();
+        scanner.nextLine();
         System.out.println("Inserisci materia:");
-        String materia = scanner.next();
+        String materia = scanner.nextLine();
         System.out.println("Inserisci cognome studente:");
-        String cognome = scanner.next();
+        String cognome = scanner.nextLine();
         System.out.println("Inserisci nome studente:");
-        String nome = scanner.next();
+        String nome = scanner.nextLine();
 
         for (Studente studente : Main.studentiList) {
             if (studente.getNome().equals(nome) && studente.getCognome().equals(cognome)) {
@@ -102,16 +103,16 @@ public class Docente {
     public void inserisciAssenza() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Inserisci cognome studente:");
-        String cognome = scanner.next();
+        String cognome = scanner.nextLine();
         System.out.println("Inserisci nome studente:");
-        String nome = scanner.next();
+        String nome = scanner.nextLine();
         System.out.println("Inserisci motivazione:");
-        String motivazione = scanner.next();
+        String motivazione = scanner.nextLine();
 
         Date dataAssenza = null;
         do {
             System.out.println("Inserisci data (nel formato giorno/mese/anno):");
-            String data = scanner.next();
+            String data = scanner.nextLine();
             try {
                 dataAssenza = new SimpleDateFormat("dd/MM/yyyy").parse(data);
             } catch (ParseException ignored) {
@@ -133,7 +134,7 @@ public class Docente {
     public void visualizzaClasse() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Inserisci classe:");
-        String classe = scanner.next();
+        String classe = scanner.nextLine();
         for (Studente studente : Main.studentiList) {
             if (studente.getClasse().equals(classe)) {
                 System.out.println(studente);
