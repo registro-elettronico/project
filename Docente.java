@@ -1,4 +1,8 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Docente {
     private String nome;
@@ -67,5 +71,73 @@ public class Docente {
 
     public void setMaterie(List<Materia> materie) {
         this.materie = materie;
+    }
+
+    // AZIONI DOCENTE
+    public void inserisciVoto() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Inserisci voto:");
+        float voto = scanner.nextFloat();
+        System.out.println("Inserisci materia:");
+        String materia = scanner.next();
+        System.out.println("Inserisci cognome studente:");
+        String cognome = scanner.next();
+        System.out.println("Inserisci nome studente:");
+        String nome = scanner.next();
+
+        for (Studente studente : Main.studentiList) {
+            if (studente.getNome().equals(nome) && studente.getCognome().equals(cognome)) {
+                for (Materia m : materie) {
+                    if (m.getNome().equals(materia)) {
+                        studente.getVoti().add(new Voto(new Date(), m, voto, this));
+                        System.out.println("Voto inserito");
+                        return;
+                    }
+                }
+            }
+        }
+        System.out.println("Studente non trovato");
+    }
+
+    public void inserisciAssenza() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Inserisci cognome studente:");
+        String cognome = scanner.next();
+        System.out.println("Inserisci nome studente:");
+        String nome = scanner.next();
+        System.out.println("Inserisci motivazione:");
+        String motivazione = scanner.next();
+
+        Date dataAssenza = null;
+        do {
+            System.out.println("Inserisci data (nel formato giorno/mese/anno):");
+            String data = scanner.next();
+            try {
+                dataAssenza = new SimpleDateFormat("dd/MM/yyyy").parse(data);
+            } catch (ParseException ignored) {
+            }
+        } while (dataAssenza == null);
+
+        for (Studente studente : Main.studentiList) {
+            if (studente.getNome().equals(nome) && studente.getCognome().equals(cognome)) {
+                studente.getAssenze().add(
+                        new Assenza(dataAssenza, motivazione)
+                );
+                System.out.println("Assenza inserita");
+                return;
+            }
+        }
+        System.out.println("Studente non trovato");
+    }
+
+    public void visualizzaClasse() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Inserisci classe:");
+        String classe = scanner.next();
+        for (Studente studente : Main.studentiList) {
+            if (studente.getClasse().equals(classe)) {
+                System.out.println(studente);
+            }
+        }
     }
 }
