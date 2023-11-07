@@ -142,8 +142,203 @@ public class Main {
                     add("4K");
                 }}
         ));
+        docentiList.add(new Docente(
+                "Maria",
+                "Cannone",
+                "cannonemar",
+                "cannone",
+                new ArrayList<>() {{
+                    add(new Materia("TPSIT"));
+                    add(new Materia("Informatica"));
+                }},
+                new ArrayList<>() {{
+                    add("4L");
+                    add("3E");
+                    add("4E");
+                    add("5I");
+                    add("5E");
+                }}
+        ));
+        docentiList.add(new Docente(
+                "Guido",
+                "Tufano",
+                "tufanogui",
+                "tufano",
+                new ArrayList<>() {{
+                    add(new Materia("Tedesco"));
+                }},
+                new ArrayList<>() {{
+                    add("1E");
+                    add("2D");
+                    add("2E");
+                    add("5A");
+                    add("4E");
+                }}
+        ));
+        docentiList.add(new Docente(
+                "Andrea",
+                "Cestari",
+                "cestariand",
+                "cestari",
+                new ArrayList<>() {{
+                    add(new Materia("Telecomunicazioni"));
+                    add(new Materia("TPSIT"));
+                    add(new Materia("Elettronica ed elettrotecnica"));
+                    add(new Materia("Installazione e manutenzione"));
+                    add(new Materia("Tecnologie informatiche"));
+                }},
+                new ArrayList<>() {{
+                    add("3G/N");
+                    add("1B");
+                    add("5F");
+                    add("3MAT");
+                    add("4E");
+                }}
+        ));
+        docentiList.add(new Docente(
+                "Christian",
+                "Gobbo",
+                "gobbochr",
+                "gobbo",
+                new ArrayList<>() {{
+                    add(new Materia("Inglese"));
+                }},
+                new ArrayList<>() {{
+                    add("3Q");
+                    add("2I");
+                    add("2C");
+                    add("5F");
+                    add("5B");
+                    add("1E");
+                    add("4E");
+                }}
+        ));
+        docentiList.add(new Docente(
+                "Jacopo",
+                "Di Cello",
+                "dicellojac",
+                "dicello",
+                new ArrayList<>() {{
+                    add(new Materia("Scienze motorie e sportive"));
+                }},
+                new ArrayList<>() {{
+                    add("5L");
+                    add("3K");
+                    add("4E");
+                    add("2F");
+                    add("2OD");
+                    add("3J");
+                    add("3F");
+                    add("2G");
+                    add("4L");
+                }}
+        ));
+        docentiList.add(new Docente(
+                "Francesco",
+                "Tocci",
+                "toccifra",
+                "tocci",
+                new ArrayList<>() {{
+                    add(new Materia("TSPIT"));
+                    add(new Materia("Informatica"));
+                }},
+                new ArrayList<>() {{
+                    add("3E");
+                    add("3K");
+                    add("4E");
+                    add("4F");
+                }}
+        ));
+        docentiList.add(new Docente(
+                "Sabina",
+                "Milanese",
+                "milanesesab",
+                "milanese",
+                new ArrayList<>() {{
+                    add(new Materia("Matematica"));
+                    add(new Materia("Complementi di matematica"));
+                }},
+                new ArrayList<>() {{
+                    add("2F");
+                    add("4E");
+                    add("4C/T");
+                    add("5K");
+                    add("2F");
+                    add("5C");
+                }}
+        ));
+        docentiList.add(new Docente(
+                "Salvatore",
+                "Montalto",
+                "montaltosal",
+                "montalto",
+                new ArrayList<>() {{
+                    add(new Materia("Religione"));
+                }},
+                new ArrayList<>() {{
+                    add("4A");
+                    add("1A");
+                    add("5I");
+                    add("4B");
+                    add("3E");
+                    add("4H");
+                    add("5L");
+                    add("4E");
+                    add("3K");
+                    add("3L");
+                    add("2A");
+                    add("3Q");
+                    add("3G/N");
+                    add("3I");
+                }}
+        ));
+         docentiList.add(new Docente(
+                "Federica",
+                "Bellavita",
+                "bellavitafed",
+                "bellavita",
+                new ArrayList<>() {{
+                    add(new Materia("TPSIT"));
+                    add(new Materia("Informatica"));
+                    add(new Materia("Scienza e tecnologie applicate"));
+                }},
+                new ArrayList<>() {{
+                    add("3K");
+                    add("4K");
+                    add("2E");
+                    add("4E");
+                }}
+        ));
+        docentiList.add(new Docente(
+                "Antonino",
+                "Petrolino",
+                "petronlinoant",
+                "petrolino",
+                new ArrayList<>() {{
+                    add(new Materia("Sistemi automatici"));
+                    add(new Materia("Elettronica ed elettrotecnica"));
+                    add(new Materia("Fisica"));
+                    add(new Materia("Telecomunicazioni"));
+                    add(new Materia("TPSIT"));
+                }},
+                new ArrayList<>() {{
+                    add("3G/N");
+                    add("3H");
+                    add("5G");
+                    add("2P");
+                    add("2OD");
+                    add("4H");
+                    add("5G");
+                    add("3H");
+                    add("4E");
+                    add("4H");
+                    add("3F");
+                }}
+        ));
+        
     }
     private static void popolaStudenti() {
+        //4E
         studentiList.add(new Studente(
                 "Thomas",
                 "Chiocchetti",
@@ -164,6 +359,148 @@ public class Main {
                 "pervizedi",
                 "perviz",
                 "4E"
+        ));
+        studentiList.add(new Studente(
+                "Luca",
+                "Siric",
+                "siricluc",
+                "siric",
+                "4E"
+        ));
+        studentiList.add(new Studente(
+                "Daen",
+                "Salku",
+                "salkudae",
+                "salku",
+                "4E"
+        ));
+        studentiList.add(new Studente(
+                "Philipp",
+                "Gurndin",
+                "gurndinphi",
+                "gurndin",
+                "4E"
+        ));
+        studentiList.add(new Studente(
+                "Daniel",
+                "Rossetti",
+                "rossettidan",
+                "rossetti",
+                "4E"
+        ));
+        studentiList.add(new Studente(
+                "Abdul",
+                "Afzal",
+                "afzalabd",
+                "afzal",
+                "4E"
+        ));
+        studentiList.add(new Studente(
+                "Alessia",
+                "Lombardo",
+                "lombardoale",
+                "lombardo",
+                "4E"
+        ));
+        studentiList.add(new Studente(
+                "Hania",
+                "Butt",
+                "butthan",
+                "butt",
+                "4E"
+        ));
+        studentiList.add(new Studente(
+                "Paolo",
+                "Ciprani",
+                "cipranipao",
+                "ciprani",
+                "4E"
+        ));
+        studentiList.add(new Studente(
+                "Marko",
+                "Rabrenovic",
+                "rabrenovicmar",
+                "rabrenovic",
+                "4E"
+        ));
+        studentiList.add(new Studente(
+                "Jacopo",
+                "Tagliazucca",
+                "tagliazuccajac",
+                "tagliazucca",
+                "4E"
+        ));
+        studentiList.add(new Studente(
+                "Francesco",
+                "Ferrari",
+                "ferrarifra",
+                "ferrari",
+                "4E"
+        ));
+        studentiList.add(new Studente(
+                "Massimiliano",
+                "Mazza",
+                "mazzamas",
+                "mazza",
+                "4E"
+        ));
+        studentiList.add(new Studente(
+                "Bledar",
+                "Balanca",
+                "balancable",
+                "balanca",
+                "4E"
+        ));
+        studentiList.add(new Studente(
+                "Amadou",
+                "Sow",
+                "sowama",
+                "sow",
+                "4E"
+        ));
+        studentiList.add(new Studente(
+                "Thomas",
+                "Bovolenta",
+                "bovolentatho",
+                "bovolenta",
+                "4E"
+        ));
+        studentiList.add(new Studente(
+                "Cristian",
+                "Marin",
+                "marincri",
+                "marin",
+                "4E"
+        ));
+        studentiList.add(new Studente(
+                "Alexander",
+                "Rarità",
+                "raritaale",
+                "rarita",
+                "4E"
+        ));
+
+        studentiList.add(new Studente(
+                "Edina",
+                "Perviz",
+                "pervizedi",
+                "perviz",
+                "4E"
+        ));
+        //Altre genti
+        studentiList.add(new Studente(
+                "Alessandro",
+                "Rossetto",
+                "rossettoale",
+                "rossetto",
+                "2L"
+        ));
+        studentiList.add(new Studente(
+                "Irene",
+                "Forti",
+                "fortiire",
+                "forti",
+                "5I"
         ));
     }
     private static void popolaVoti() {
