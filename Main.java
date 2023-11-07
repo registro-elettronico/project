@@ -183,9 +183,9 @@ public class Main {
                 new ArrayList<>() {{
                     add(new Materia("Telecomunicazioni"));
                     add(new Materia("TPSIT"));
-                    add(new Materia("Elettronica ed elettrotecnica"));
-                    add(new Materia("Installazione e manutenzione"));
-                    add(new Materia("Tecnologie informatiche"));
+                    add(new Materia("Elettronica ed Elettrotecnica"));
+                    add(new Materia("Installazione e Manutenzione"));
+                    add(new Materia("Tecnologie Informatiche"));
                 }},
                 new ArrayList<>() {{
                     add("3G/N");
@@ -256,7 +256,7 @@ public class Main {
                 "milanese",
                 new ArrayList<>() {{
                     add(new Materia("Matematica"));
-                    add(new Materia("Complementi di matematica"));
+                    add(new Materia("Complementi di Matematica"));
                 }},
                 new ArrayList<>() {{
                     add("2F");
@@ -300,7 +300,7 @@ public class Main {
                 new ArrayList<>() {{
                     add(new Materia("TPSIT"));
                     add(new Materia("Informatica"));
-                    add(new Materia("Scienza e tecnologie applicate"));
+                    add(new Materia("Scienze e Tecnologie Applicate"));
                 }},
                 new ArrayList<>() {{
                     add("3K");
@@ -316,7 +316,7 @@ public class Main {
                 "petrolino",
                 new ArrayList<>() {{
                     add(new Materia("Sistemi automatici"));
-                    add(new Materia("Elettronica ed elettrotecnica"));
+                    add(new Materia("Elettronica ed Elettrotecnica"));
                     add(new Materia("Fisica"));
                     add(new Materia("Telecomunicazioni"));
                     add(new Materia("TPSIT"));
