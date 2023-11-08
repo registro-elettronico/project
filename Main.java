@@ -312,7 +312,7 @@ public class Main {
         docentiList.add(new Docente(
                 "Antonino",
                 "Petrolino",
-                "petronlinoant",
+                "petrolinoant",
                 "petrolino",
                 new ArrayList<>() {{
                     add(new Materia("Sistemi automatici"));

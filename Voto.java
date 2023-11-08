@@ -15,12 +15,17 @@ public class Voto {
 
     @Override
     public String toString() {
-        return "Voto{" +
-                "data=" + data +
-                ", materia=" + materia.getNome() +
-                ", voto=" + voto +
-                ", docente=" + docente.getUsername() +
-                '}';
+        String formattedData = String.format("%-33s", data);
+        String formattedMateria = String.format("%-33s", materia.getNome());
+        String formattedVoto = String.format("%-13s", voto);
+        String formattedDocente = String.format("%-15s", docente.getUsername());
+
+        return "\nVoto { " +
+            "data = " + formattedData +
+            "materia = " + formattedMateria +
+            "voto = " + formattedVoto +
+            "docente = " + formattedDocente +
+            " } ";
     }
 
     public Date getData() {

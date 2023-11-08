@@ -23,13 +23,13 @@ public class Studente {
     @Override
     public String toString() {
         return "Studente{" +
-                "nome='" + nome + '\'' +
-                ", cognome='" + cognome + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", classe='" + classe + '\'' +
-                ", voti=" + voti +
-                ", assenze=" + assenze +
+                "\nnome='" + nome + '\'' +
+                ", \ncognome='" + cognome + '\'' +
+                ", \nusername='" + username + '\'' +
+                ", \npassword='" + password + '\'' +
+                ", \nclasse='" + classe + '\'' +
+                ", \nvoti=" + voti +
+                ", \nassenze=" + assenze +
                 '}';
     }
 
