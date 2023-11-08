@@ -24,6 +24,6 @@
 <p>Il programma chiede cognome e nome dello studente, motivazione e data nel formato GG/MM/AAAA.</p>
 <br>
 
-<h4>Visualizzazione classi* (Docenti)</h4>
+<h4>5. Visualizzazione classi* (Docenti)</h4>
 <p>Il Programma chiede di quale classe si vogliono visualizzare tutti gli studenti con tutti i loro dati, il formato da utilizzare è: 4E, 2OD, 3G/N</p>
 </details>
