@@ -14,6 +14,8 @@ public class Main {
         popolaStudenti();
         popolaVoti();
 
+        printLogo();
+        
         // Login
         Object utente;
         do {
@@ -67,7 +69,7 @@ public class Main {
 
     private static Object login(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Inserisci username:");
+        System.out.println("\n\nInserisci username:");
         String username = scanner.nextLine();
         System.out.println("Inserisci password:");
         String password = scanner.nextLine();
@@ -493,6 +495,37 @@ public class Main {
                     ));
                 }
             }
+        }
+    }
+
+    public static void printLogo(){
+        System.out.println(" ________  _______   ________  ___  ________  _________  ________  ________");
+        System.out.println("|\\   __  \\|\\  ___ \\ |\\   ____\\|\\  \\|\\   ____\\|\\___   ___\\\\   __  \\|\\   __  \\");
+        System.out.println("\\ \\  \\|\\  \\ \\   __/|\\ \\  \\___|\\ \\  \\ \\  \\___|\\|___ \\  \\_\\ \\  \\|\\  \\ \\  \\|\\  \\");
+        System.out.println(" \\ \\   _  _\\ \\  \\_|/_\\ \\  \\  __\\ \\  \\ \\_____  \\   \\ \\  \\ \\ \\   _  _\\ \\  \\\\\\  \\");
+        System.out.println("  \\ \\  \\\\  \\\\ \\  \\_|\\ \\ \\  \\|\\  \\ \\  \\|____|\\  \\   \\ \\  \\ \\ \\  \\\\  \\\\ \\  \\\\\\  \\");
+        System.out.println("   \\ \\__\\\\ _\\\\ \\_______\\ \\_______\\ \\__\\____\\_\\  \\   \\ \\__\\ \\ \\__\\\\ _\\\\ \\_______\\");
+        System.out.println("    \\|__|\\|__|\\|_______|\\|_______|\\|__|\\_________\\   \\|__|  \\|__|\\|__|\\|_______|");
+        System.out.println("                                      \\|_________|");
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(" _______   ___       _______  _________  _________  ________  ________  ________   ___  ________  ________");
+        System.out.println("|\\  ___ \\ |\\  \\     |\\  ___ \\|\\___   ___\\\\___   ___\\\\   __  \\|\\   __  \\|\\   ___  \\|\\  \\|\\   ____\\|\\   __  \\");
+        System.out.println("\\ \\   __/|\\ \\  \\    \\ \\   __/\\|___ \\  \\_\\|___ \\  \\_\\ \\  \\|\\  \\ \\  \\|\\  \\ \\  \\\\ \\  \\ \\  \\ \\  \\___|\\ \\  \\|\\  \\");
+        System.out.println(" \\ \\  \\_|/_\\ \\  \\    \\ \\  \\_|/__  \\ \\  \\     \\ \\  \\ \\ \\   _  _\\ \\  \\\\\\  \\ \\  \\\\ \\  \\ \\  \\ \\  \\    \\ \\  \\\\\\  \\");
+        System.out.println("  \\ \\  \\_|\\ \\ \\  \\____\\ \\  \\_|\\ \\  \\ \\  \\     \\ \\  \\ \\ \\  \\\\  \\\\ \\  \\\\\\  \\ \\  \\\\ \\  \\ \\  \\ \\  \\____\\ \\  \\\\\\  \\");
+        System.out.println("   \\ \\_______\\ \\_______\\ \\_______\\  \\ \\__\\     \\ \\__\\ \\ \\__\\\\ _\\\\ \\_______\\ \\__\\\\ \\__\\ \\__\\ \\_______\\ \\_______\\");
+        System.out.println("    \\|_______|\\|_______|\\|_______|   \\|__|      \\|__|  \\|__|\\|__|\\|_______|\\|__| \\|__|\\|__|\\|_______|\\|_______|");
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }
