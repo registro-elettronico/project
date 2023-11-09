@@ -25,5 +25,5 @@
 <br>
 
 <h4>5. Visualizzazione classi* (Docenti)</h4>
-<p>Il Programma chiede di quale classe si vogliono visualizzare tutti gli studenti con tutti i loro dati, il formato da utilizzare è: 4E, 2OD, 3G/N</p>
+<p>Il Programma chiede di quale classe si vogliono visualizzare tutti gli studenti con tutti i loro dati, il formato da utilizzare è: 4E.</p>
 </details>
