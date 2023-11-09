@@ -11,10 +11,11 @@ public class Assenza {
 
     @Override
     public String toString() {
-        return "Assenza{" +
-                "data=" + data +
-                ", motivo='" + motivo + '\'' +
-                '}';
+        String formattedData = String.format("%-33s", data);
+        String formattedMotivo = String.format("%-33s", motivo);
+
+        return "\nData: " + formattedData +
+            "Motivo: " + formattedMotivo;
     }
 
     public Date getData() {

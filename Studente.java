@@ -22,15 +22,14 @@ public class Studente {
 
     @Override
     public String toString() {
-        return "Studente{" +
-                "\nnome='" + nome + '\'' +
-                ", \ncognome='" + cognome + '\'' +
-                ", \nusername='" + username + '\'' +
-                ", \npassword='" + password + '\'' +
-                ", \nclasse='" + classe + '\'' +
-                ", \nvoti=" + voti +
-                ", \nassenze=" + assenze +
-                '}';
+        return "===== Studente =====" +
+                "\nNome: " + nome +
+                "\nCognome: " + cognome + 
+                "\nUsername: " + username +
+                "\nPassword: " + password +
+                "\nClasse: " + classe + 
+                "\n-- Voti --:\n" + voti +
+                "\n-- Assenze --\n" + assenze;
     }
 
     public List<Voto> getVoti() {

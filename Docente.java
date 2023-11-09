@@ -24,12 +24,12 @@ public class Docente {
     @Override
     public String toString() {
         return "Docente{" +
-                "nome='" + nome + '\'' +
-                ", cognome='" + cognome + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", materie=" + materie +
-                ", classi=" + classi +
+                "Nome: " + nome + '\'' +
+                "Cognome: " + cognome + '\'' +
+                "Username: " + username + '\'' +
+                "Password: " + password + '\'' +
+                "Materie: " + materie +
+                "Classi: " + classi +
                 '}';
     }
 

@@ -20,12 +20,10 @@ public class Voto {
         String formattedVoto = String.format("%-13s", voto);
         String formattedDocente = String.format("%-15s", docente.getUsername());
 
-        return "\nVoto { " +
-            "data = " + formattedData +
-            "materia = " + formattedMateria +
-            "voto = " + formattedVoto +
-            "docente = " + formattedDocente +
-            " } ";
+        return "\nData: " + formattedData +
+            "Materia: " + formattedMateria +
+            "Voto: " + formattedVoto +
+            "Docente: " + formattedDocente;
     }
 
     public Date getData() {

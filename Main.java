@@ -479,30 +479,8 @@ public class Main {
                 "rarita",
                 "4E"
         ));
-
-        studentiList.add(new Studente(
-                "Edina",
-                "Perviz",
-                "pervizedi",
-                "perviz",
-                "4E"
-        ));
-        //Altre genti
-        studentiList.add(new Studente(
-                "Alessandro",
-                "Rossetto",
-                "rossettoale",
-                "rossetto",
-                "2L"
-        ));
-        studentiList.add(new Studente(
-                "Irene",
-                "Forti",
-                "fortiire",
-                "forti",
-                "5I"
-        ));
     }
+    
     private static void popolaVoti() {
         for (Studente studente : studentiList) {
             for (Docente docente : docentiList) {
